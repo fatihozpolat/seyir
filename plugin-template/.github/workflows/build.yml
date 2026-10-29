@@ -1,0 +1,35 @@
+# Her itmede eklentileri derler ve sonucu "builds" dalına yazar (Seyir buradan okur).
+# Actions kullanılamıyorsa aynı iş yerelde `./gradlew publishRepo` ile yapılır.
+name: Build plugins
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: builds
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Build
+        run: chmod +x gradlew && ./gradlew --console=plain makeRepo --continue
+      - name: Publish to builds branch
+        working-directory: build/repo
+        run: |
+          git init -q -b builds
+          git add .
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
+            commit -q -m "Build ${GITHUB_SHA::7}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" builds

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#25252D"/>
+      <stop offset="1" stop-color="#0C0C0F"/>
+    </linearGradient>
+    <linearGradient id="hi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8C766"/>
+      <stop offset="1" stop-color="#E4A136"/>
+    </linearGradient>
+    <linearGradient id="low" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D6881F"/>
+      <stop offset="1" stop-color="#A9620F"/>
+    </linearGradient>
+    <mask id="gap">
+      <rect width="1024" height="1024" fill="#fff"/>
+      <path d="M -20 606 L 240 606 C 440 650, 560 372, 850 436 L 1044 436" fill="none" stroke="#000" stroke-width="34"/>
+    </mask>
+    <clipPath id="above"><path d="M -20 606 L 240 606 C 440 650, 560 372, 850 436 L 1044 436 L 1044 -20 L -20 -20 Z"/></clipPath>
+  </defs>
+  <rect x="32" y="32" width="960" height="960" rx="232" fill="url(#bg)"/>
+  <rect x="32" y="32" width="960" height="960" rx="232" fill="url(#hi)"/>
+  <rect x="33.5" y="33.5" width="957" height="957" rx="230.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="3"/>
+  <g transform="translate(512 512) scale(1.14) translate(-521 -512)"><g mask="url(#gap)">
+    <path d="M 388.0 352.0 L 388.0 672.0 C 388.0 715.4 411.0 728.7 448.6 707.0 L 730.6 544.0 C 764.9 524.2 764.9 499.8 730.6 480.0 L 448.6 317.0 C 411.0 295.3 388.0 308.6 388.0 352.0 Z" fill="url(#low)"/>
+    <path d="M 388.0 352.0 L 388.0 672.0 C 388.0 715.4 411.0 728.7 448.6 707.0 L 730.6 544.0 C 764.9 524.2 764.9 499.8 730.6 480.0 L 448.6 317.0 C 411.0 295.3 388.0 308.6 388.0 352.0 Z" fill="url(#top)" clip-path="url(#above)"/>
+  </g></g>
+</svg>

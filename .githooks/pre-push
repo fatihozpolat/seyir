@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# Push öncesi testleri çalıştırır. Etkinleştirmek için bir kez: git config core.hooksPath .githooks
+# Acil durumda atlamak için: git push --no-verify  (ya da SEYIR_SKIP_VERIFY=1 git push)
+set -eu
+
+if [ "${SEYIR_SKIP_VERIFY:-}" = "1" ]; then
+    echo "pre-push: doğrulama atlandı (SEYIR_SKIP_VERIFY=1)" >&2
+    exit 0
+fi
+
+root="$(git rev-parse --show-toplevel)"
+echo "pre-push: scripts/verify.sh çalışıyor..." >&2
+exec "$root/scripts/verify.sh"

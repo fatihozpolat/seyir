@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T12:00:00Z",
+  "title": "Design System: Seyir",
+  "extensions": {
+    "colorMeta": {
+      "background": { "role": "neutral", "displayName": "Salon Karanlığı", "canonical": "#0F0F12", "tonalRamp": ["#0F0F12", "#15151A", "#1C1C21", "#26262C", "#2E2E35", "#34343C", "#8B8D98", "#F4F4F6"] },
+      "surface": { "role": "neutral", "displayName": "Koltuk Yüzeyi", "canonical": "#1C1C21", "tonalRamp": ["#0F0F12", "#15151A", "#1C1C21", "#26262C", "#2E2E35", "#34343C", "#8B8D98", "#F4F4F6"] },
+      "surface-high": { "role": "neutral", "displayName": "Yükselti", "canonical": "#26262C", "tonalRamp": ["#0F0F12", "#15151A", "#1C1C21", "#26262C", "#2E2E35", "#34343C", "#8B8D98", "#F4F4F6"] },
+      "accent": { "role": "primary", "displayName": "Projektör Kehribarı", "canonical": "#E0A33A", "tonalRamp": ["#1A1305", "#3A2A10", "#6B4A14", "#9A6A1C", "#C98A26", "#E0A33A", "#EBB14C", "#F6D9A0"] },
+      "text": { "role": "neutral", "displayName": "Metin", "canonical": "#F4F4F6", "tonalRamp": ["#34343C", "#8B8D98", "#A6A8B2", "#C5C6CD", "#D8D9DE", "#E6E6EA", "#F4F4F6", "#FFFFFF"] },
+      "success": { "role": "status", "displayName": "Çalışıyor Yeşili", "canonical": "#4CC38A", "tonalRamp": ["#0F3324", "#165038", "#1F6F4E", "#2E9468", "#4CC38A", "#78D4A6", "#A5E3C3", "#D2F2E1"] },
+      "danger": { "role": "status", "displayName": "Hata Mercanı", "canonical": "#FF7A70", "tonalRamp": ["#4A1511", "#7A2620", "#A83A32", "#D4544B", "#FF7A70", "#FF9A92", "#FFB9B3", "#FFDAD6"] }
+    },
+    "typographyMeta": {
+      "display-large": { "displayName": "Display Large", "purpose": "Ana sayfa pano başlığı (56/60, 800)." },
+      "display-small": { "displayName": "Display Small", "purpose": "Detay ekranı başlığı (42/46, 800)." },
+      "headline-medium": { "displayName": "Headline Medium", "purpose": "Ekran başlığı (30/36, 700)." },
+      "title-medium": { "displayName": "Title Medium", "purpose": "Sıra başlığı ve durum paneli başlığı (17/24, 600)." },
+      "body-medium": { "displayName": "Body Medium", "purpose": "Varsayılan gövde, metin kutusu, afiş başlığı (14/20)." },
+      "label-medium": { "displayName": "Label Medium", "purpose": "Künye satırı ve sayaçlar (13/18, 500)." },
+      "label-small": { "displayName": "Label Small", "purpose": "Chip ve afiş alt satırı (12/16, 500)." }
+    },
+    "shadows": [
+      { "name": "poster-rest", "value": "elevation 8dp, ambient/spot #000", "purpose": "Afiş kartı hareketsizken." },
+      { "name": "poster-hover", "value": "elevation 18dp, ambient/spot #000", "purpose": "Afiş kartı üzerine gelince." },
+      { "name": "accent-glow", "value": "elevation 14dp, ambient/spot #E0A33A", "purpose": "Yalnız büyük birincil düğme." }
+    ],
+    "motion": [
+      { "name": "color-fast", "value": "tween 140ms", "purpose": "Düğme, simge düğmesi, metin kutusu çerçevesi renk geçişi." },
+      { "name": "rail-item", "value": "tween 160ms", "purpose": "Ray öğesi zemini." },
+      { "name": "poster-hover", "value": "tween 220ms, scale 1.035", "purpose": "Afiş büyümesi, iç çizgi ve başlık rengi." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sayfanın tek kehribar eylemi (Oynat gibi).",
+      "html": "<button class=\"ds-btn-primary\">Oynat</button>",
+      "css": ".ds-btn-primary{background:#E0A33A;color:#1A1305;height:40px;padding:0 16px;border:none;border-radius:10px;font:600 14px/20px Inter,sans-serif;cursor:pointer;transition:background .14s}.ds-btn-primary:hover{background:#EBB14C}.ds-btn-primary:active{background:#C98A26}.ds-btn-primary:focus-visible{outline:2px solid #E0A33A;outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Dolgulu nötr düğme, kıl çizgili.",
+      "html": "<button class=\"ds-btn-secondary\">Listeme ekle</button>",
+      "css": ".ds-btn-secondary{background:#26262C;color:#F4F4F6;height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.07);border-radius:10px;font:600 14px/20px Inter,sans-serif;cursor:pointer;transition:background .14s}.ds-btn-secondary:hover{background:#2E2E35}.ds-btn-secondary:active{background:#1C1C21}.ds-btn-secondary:focus-visible{outline:2px solid #E0A33A;outline-offset:2px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Yalnız metin; hover'da yüzey alır.",
+      "html": "<button class=\"ds-btn-quiet\">Durdur</button>",
+      "css": ".ds-btn-quiet{background:transparent;color:#C5C6CD;height:40px;padding:0 16px;border:none;border-radius:10px;font:600 14px/20px Inter,sans-serif;cursor:pointer;transition:background .14s}.ds-btn-quiet:hover{background:#26262C;color:#F4F4F6}.ds-btn-quiet:focus-visible{outline:2px solid #E0A33A;outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Arama ve ayar alanı; odakta kehribar çerçeve.",
+      "html": "<input class=\"ds-input\" placeholder=\"Film, dizi ara\">",
+      "css": ".ds-input{background:#1C1C21;color:#F4F4F6;height:42px;padding:0 14px;border:1px solid rgba(255,255,255,.07);border-radius:10px;font:400 14px/20px Inter,sans-serif;outline:none;transition:border-color .14s}.ds-input::placeholder{color:#8B8D98}.ds-input:hover{border-color:#34343C}.ds-input:focus{border-color:rgba(224,163,58,.85);caret-color:#E0A33A}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tür, sürüm, kalite etiketi.",
+      "html": "<span class=\"ds-chip\">Dizi</span> <span class=\"ds-chip ds-chip-hl\">1080p</span>",
+      "css": ".ds-chip{display:inline-block;background:#26262C;color:#C5C6CD;padding:3px 8px;border-radius:6px;font:500 12px/16px Inter,sans-serif;letter-spacing:.1px}.ds-chip-hl{background:rgba(224,163,58,.16);color:#E0A33A}"
+    },
+    {
+      "name": "Poster Card",
+      "kind": "card",
+      "refersTo": "poster-card",
+      "description": "2:3 afiş, iç çizgi, alt başlık; hover'da büyür.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-img\"></div><div class=\"ds-card-title\">El Camino</div><div class=\"ds-card-sub\">Film</div></div>",
+      "css": ".ds-card{width:160px;cursor:pointer}.ds-card-img{aspect-ratio:2/3;border-radius:10px;background:linear-gradient(#26262C,#1C1C21);box-shadow:0 4px 12px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.07);transition:transform .22s,box-shadow .22s}.ds-card:hover .ds-card-img{transform:scale(1.035);box-shadow:0 10px 28px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.28)}.ds-card-title{margin-top:10px;font:500 14px/20px Inter,sans-serif;color:#C5C6CD}.ds-card:hover .ds-card-title{color:#F4F4F6}.ds-card-sub{margin-top:2px;font:500 12px/16px Inter,sans-serif;color:#8B8D98}"
+    },
+    {
+      "name": "Nav Rail Item",
+      "kind": "nav",
+      "refersTo": "nav-rail-item-selected",
+      "description": "88px rayda 72x60 öğe; seçili hâl yüzey dolgulu, kehribar simgeli.",
+      "html": "<div class=\"ds-nav ds-nav-sel\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"#E0A33A\"><path d=\"M12 3 3 11h2v9h5v-6h4v6h5v-9h2z\"/></svg><span>Ana sayfa</span></div>",
+      "css": ".ds-nav{width:72px;height:60px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#8B8D98;font:500 10.5px/16px Inter,sans-serif;cursor:pointer;transition:background .16s}.ds-nav:hover{background:#1C1C21;color:#C5C6CD}.ds-nav-sel{background:#26262C;color:#F4F4F6}"
+    },
+    {
+      "name": "Progress Bar",
+      "kind": "custom",
+      "refersTo": "poster-card",
+      "description": "4px yuvarlak uçlu kehribar ilerleme çubuğu.",
+      "html": "<div class=\"ds-progress\"><div class=\"ds-progress-fill\" style=\"width:60%\"></div></div>",
+      "css": ".ds-progress{height:4px;border-radius:9999px;background:#2E2E35;overflow:hidden;width:140px}.ds-progress-fill{height:100%;border-radius:9999px;background:#E0A33A}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Karartılmış Salon",
+    "overview": "Seyir, ışıkları kısılmış bir salonun masaüstü karşılığıdır. Zemin neredeyse siyahtır, arayüz geri çekilir, afişler ve arka plan görselleri ışığı taşır. Tek sıcak renk, kehribar, yalnız eyleme, ilerlemeye ve seçime düşer. Düzen kategorinin bilinen kalıbını izler: öne çıkan pano ve altında yatay afiş sıraları. Özen kalıpta değil işçiliktedir.\n\nYalnız koyu tema vardır. Yüzeyler gölgeyle değil, tonal katmanlarla ve %7 beyaz kıl çizgileriyle ayrışır. Material 3 bileşenlerinin varsayılanları kullanılmaz; tema yalnız renk, yazı ve şekil kaynağıdır.",
+    "keyCharacteristics": [
+      "Neredeyse siyah zemin, tonal yüzey katmanları, kıl çizgisi sınırlar.",
+      "Tek vurgu: kehribar. Ekranda nadirdir.",
+      "Başlıklarda sıkı Inter Display (800/700), gövdede Inter.",
+      "2:3 afiş, 10px köşe, üzerine gelince hafif büyüme.",
+      "Klavye odağı kehribar halkayla, fare tıklamasında halka yok.",
+      "Beş durum (yükleniyor, boş, hata, hover, odak) tek dille çizilir."
+    ],
+    "rules": [
+      { "name": "The One Warm Light Rule", "body": "Kehribar yalnız eylemde (birincil düğme), ilerlemede (çubuk) ve seçimde/odakta görünür. Süs, başlık veya arka plan rengi olarak kullanılmaz.", "section": "colors" },
+      { "name": "The Tonal Step Rule", "body": "Yüzey sırası background < surface < surface-high < surface-hover; bir katman ancak bir üstteki basamakla ayrışır, araya yeni gri eklenmez.", "section": "colors" },
+      { "name": "The Display Only For Headlines Rule", "body": "Inter Display yalnız 24px ve üzeri başlıklarda kullanılır; küçük metin her zaman Inter'dir.", "section": "typography" },
+      { "name": "The Quiet Metadata Rule", "body": "Künye satırı label-medium, parçalar '  ·  ' ile ayrılır, boş parça atlanır; ikincil bilgi büyütülmez, renkle geri çekilir.", "section": "typography" },
+      { "name": "The Single Gutter Rule", "body": "Her ekranın sol kenarı 40px'tir. Yeni bir yatay hizalama çizgisi eklenmez.", "section": "layout" },
+      { "name": "The Flat Surface Rule", "body": "Düğme, metin kutusu, chip, ray ve şerit düzdür; ayrım ton ve kıl çizgisiyledir. Gölge yalnız görsele (afiş) ve tek pano eylemine aittir.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do kehribarı yalnız birincil eylem, ilerleme ve seçim/odak için kullan.",
+      "Do her yeni ekranı 40px sayfa kenarına ve ScreenHeader / RowSection iskeletine oturt.",
+      "Do yeni yüzeyi background, surface, surface-high, surface-hover basamaklarından ve 1px hairline ile ayır.",
+      "Do etkileşimli her öğeye klavye odağında 2px (afişte 3px) kehribar halka ver.",
+      "Do yükleniyor, boş, hata durumlarını CenteredLoading, EmptyPanel, ErrorPanel ile çiz.",
+      "Do görsel gelen yerde afişi 2:3 ve 10px köşeyle, yer tutucu gradyanıyla birlikte kullan."
+    ],
+    "donts": [
+      "Don't Material 3 varsayılan bileşenlerini (düğme, metin alanı, dalga efekti) çıplak kullanma; tema yalnız token kaynağıdır.",
+      "Don't düz bir griye tek vurguyla yetinen, ritmi ve tipografisi çalışılmamış ekran çizme.",
+      "Don't sert ofsetli gölge ya da kehribar dışında renkli ışıma ekleme.",
+      "Don't açık tema ya da ikinci vurgu rengi ekleme.",
+      "Don't 24px altı metinde Inter Display kullanma."
+    ]
+  }
+}

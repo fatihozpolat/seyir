@@ -1,0 +1,15 @@
+.gradle/
+build/
+.kotlin/
+.idea/
+*.iml
+local.properties
+/data/
+/app/resources/windows/mpv/
+/.claude/
+/dist/
+/.impeccable/questions/
+/.impeccable/mocks/
+# Yerel çalışma notları ve ajan kuralları (depoya girmez)
+/docs/DURUM.md
+/CLAUDE.md
